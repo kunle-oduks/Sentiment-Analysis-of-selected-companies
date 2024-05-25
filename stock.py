@@ -36,7 +36,7 @@ req = Request(url=url, headers={'user-agent': 'my-app'})
 response = urlopen(req)
 
 html = BeautifulSoup(response, 'html')
-df= pd.DataFrame(columns= ['Date', 'Time', 'Title', 'Link'])
+df= pd.DataFrame(columns= ['Date', 'Time', 'Title'])
 news_table = html.find('table', id = 'news-table')
 rows = news_table.find_all('tr')
 for row in rows:
