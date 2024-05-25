@@ -40,7 +40,7 @@ df= pd.DataFrame(columns= ['Date', 'Time', 'Title', 'Link'])
 news_table = html.find('table', id = 'news-table')
 rows = news_table.find_all('tr')
 for row in rows:
-    link = row.a.get('href')
+    #link = row.a.get('href')
     title = row.a.text.strip()
     Date_data = row.td.text.strip().split(' ')
 
@@ -55,7 +55,7 @@ for row in rows:
             date = Date_data[0]
             time = Date_data[1]
     
-    the_row = [date, time, title, link]
+    the_row = [date, time, title]
     l = len(df)
     df.loc[l]= the_row
 
