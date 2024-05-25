@@ -36,11 +36,11 @@ req = Request(url=url, headers={'user-agent': 'my-app'})
 response = urlopen(req)
 
 html = BeautifulSoup(response, 'html')
-df= pd.DataFrame(columns= ['Date', 'Time', 'Title'])
+df= pd.DataFrame(columns= ['Date', 'Time', 'Title', 'link'])
 news_table = html.find('table', id = 'news-table')
 rows = news_table.find_all('tr')
 for row in rows:
-    #link = row.a.get('href')
+    link = row.a['href']
     title = row.a.text.strip()
     Date_data = row.td.text.strip().split(' ')
 
@@ -55,7 +55,7 @@ for row in rows:
             date = Date_data[0]
             time = Date_data[1]
     
-    the_row = [date, time, title]
+    the_row = [date, time, title, link]
     l = len(df)
     df.loc[l]= the_row
 
