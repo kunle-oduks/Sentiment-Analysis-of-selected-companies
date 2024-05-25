@@ -40,7 +40,7 @@ df= pd.DataFrame(columns= ['Date', 'Time', 'Title', 'Link'])
 news_table = html.find('table', id = 'news-table')
 rows = news_table.find_all('tr')
 for row in rows:
-    link = row.a['href']
+    link = row.a.get('href')
     title = row.a.text.strip()
     Date_data = row.td.text.strip().split(' ')
 
