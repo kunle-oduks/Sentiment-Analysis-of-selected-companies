@@ -1,0 +1,12 @@
+beautifulsoup4==4.12.3
+bs4==0.0.2
+matplotlib==3.8.3
+matplotlib-inline==0.1.6
+nltk==3.8.1
+numpy==1.25.2
+pandas==2.2.1
+plotly==5.19.0
+requests==2.31.0
+scikit-learn==1.4.1.post1
+seaborn==0.12.2
+urllib3==2.2.1
